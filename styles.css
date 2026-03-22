@@ -1,0 +1,113 @@
+:root {
+  --mountain-blue: 26 46 68; /* #1A2E44 */
+  --electric-teal: 0 209 193; /* #00D1C1 */
+  --electric-teal-dark: 0 179 166; /* #00B3A6 */
+  --warm-slate: 248 250 252; /* #F8FAFC */
+  --dark-slate: 51 65 85; /* #334155 */
+  --hero-pattern: url('assets/hero_bg.png');
+  --hero-filter: hue-rotate(0deg);
+}
+
+[data-theme="red"] {
+  --mountain-blue: 35 15 15; /* dark maroon/black */
+  --electric-teal: 255 42 77; /* neon red #FF2A4D */
+  --electric-teal-dark: 217 26 56; /* darker neon red */
+  --warm-slate: 252 248 248; /* slightly warm pinkish white */
+  --dark-slate: 65 51 51; /* reddish slate */
+  --hero-pattern: url('assets/hero_bg.png');
+  --hero-filter: hue-rotate(150deg) saturate(1.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Scrolling/Rolling Animations (mimicking EUC) */
+.roll-in-left {
+  opacity: 0;
+  transform: translateX(-50px) rotate(-5deg);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.roll-in-left.is-visible {
+  opacity: 1;
+  transform: translateX(0) rotate(0);
+}
+
+.roll-in-right {
+  opacity: 0;
+  transform: translateX(50px) rotate(5deg);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.roll-in-right.is-visible {
+  opacity: 1;
+  transform: translateX(0) rotate(0);
+}
+
+.roll-in-bottom {
+  opacity: 0;
+  transform: translateY(50px) rotate(2deg);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.roll-in-bottom.is-visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--mountain-blue));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--electric-teal));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--electric-teal-dark));
+}
+
+/* Form Styles */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: rgb(var(--electric-teal));
+  box-shadow: 0 0 0 3px rgba(var(--electric-teal) / 0.2);
+}
