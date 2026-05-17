@@ -1,528 +1,247 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CyberScout is a mobile-first AI literacy initiative for remote Himalayan communities, blending ancient resilience with generative AI education."
+    />
+    <title>CyberScout | Mobile AI Literacy Initiative</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/cyberscout-hero.png" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="CyberScout home">
+        <span class="brand-mark">CS</span>
+        <span>CyberScout</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#field-system">System</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+    </header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberscout: AI on Wheels</title>
-    <meta name="description"
-        content="Bridging the digital divide across the Himalayas, one school at a time with generative AI and electric unicycles.">
-
-    <!-- Google Fonts: Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'mountain-blue': 'rgb(var(--mountain-blue) / <alpha-value>)',
-                        'electric-teal': 'rgb(var(--electric-teal) / <alpha-value>)',
-                        'electric-teal-dark': 'rgb(var(--electric-teal-dark) / <alpha-value>)',
-                        'warm-slate': 'rgb(var(--warm-slate) / <alpha-value>)',
-                        'dark-slate': 'rgb(var(--dark-slate) / <alpha-value>)'
-                    },
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    backgroundImage: {
-                        'hero-pattern': "var(--hero-pattern)",
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-
-<body class="bg-warm-slate text-dark-slate font-sans antialiased overflow-x-hidden">
-
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-mountain-blue/80 border-b border-white/10"
-        id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <i data-lucide="zap" class="text-electric-teal h-8 w-8"></i>
-                    <span class="font-bold text-2xl tracking-tight text-white">Cyberscout</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#gallery"
-                        class="text-white/80 hover:text-electric-teal transition-colors font-medium">Gallery</a>
-                    <a href="#mission"
-                        class="text-white/80 hover:text-electric-teal transition-colors font-medium">Mission</a>
-                    <a href="#what-we-do"
-                        class="text-white/80 hover:text-electric-teal transition-colors font-medium">What We Do</a>
-                    <a href="#impact"
-                        class="text-white/80 hover:text-electric-teal transition-colors font-medium">Impact</a>
-                    <a href="#contact"
-                        class="bg-electric-teal text-mountain-blue px-6 py-2.5 rounded-full font-semibold hover:bg-electric-teal-dark hover:shadow-[0_0_15px_rgba(var(--electric-teal),0.5)] transition-all transform hover:-translate-y-0.5">Invite
-                        a Scout</a>
-                    <button class="theme-toggle-btn text-white/80 hover:text-electric-teal transition-colors"
-                        title="Toggle Theme">
-                        <i data-lucide="palette" class="w-6 h-6"></i>
-                    </button>
-                </div>
-                <!-- Mobile menu buttons -->
-                <div class="md:hidden flex items-center gap-4">
-                    <button class="theme-toggle-btn text-white/80 hover:text-electric-teal focus:outline-none"
-                        title="Toggle Theme">
-                        <i data-lucide="palette" class="h-6 w-6"></i>
-                    </button>
-                    <button id="mobile-menu-btn" class="text-white hover:text-electric-teal focus:outline-none">
-                        <i data-lucide="menu" class="h-6 w-6"></i>
-                    </button>
-                </div>
-            </div>
+    <main id="top">
+      <section class="hero" aria-label="CyberScout introduction">
+        <canvas id="signal-canvas" aria-hidden="true"></canvas>
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Mobile AI Literacy Initiative</p>
+          <h1>Primitive Futurism for the next generation of digital makers.</h1>
+          <p class="hero-copy">
+            CyberScout carries generative AI, autonomous agents, and digital sovereignty into the
+            high folds of the Himalayas, turning smartphones and tablets into instruments of local
+            imagination.
+          </p>
+          <div class="hero-actions" aria-label="Page actions">
+            <a class="button primary" href="#curriculum">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2Zm4-12h7M8 11h7M8 15h5" />
+              </svg>
+              Explore curriculum
+            </a>
+            <a class="button secondary" href="#field-system">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19" />
+              </svg>
+              See field system
+            </a>
+          </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-mountain-blue border-t border-white/10">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#gallery"
-                    class="block px-3 py-2 text-white/80 hover:text-electric-teal hover:bg-white/5 rounded-md font-medium">Gallery</a>
-                <a href="#mission"
-                    class="block px-3 py-2 text-white/80 hover:text-electric-teal hover:bg-white/5 rounded-md font-medium">Mission</a>
-                <a href="#what-we-do"
-                    class="block px-3 py-2 text-white/80 hover:text-electric-teal hover:bg-white/5 rounded-md font-medium">What
-                    We Do</a>
-                <a href="#impact"
-                    class="block px-3 py-2 text-white/80 hover:text-electric-teal hover:bg-white/5 rounded-md font-medium">Impact</a>
-                <a href="#contact"
-                    class="block px-3 py-2 text-electric-teal hover:text-white hover:bg-white/5 rounded-md font-medium">Invite
-                    a Scout</a>
+        <aside class="hero-panel" aria-label="CyberScout field telemetry">
+          <div class="pulse-row">
+            <span class="pulse-dot"></span>
+            <span>Phase I active</span>
+          </div>
+          <dl class="telemetry">
+            <div>
+              <dt>Transport</dt>
+              <dd>Electric unicycle fleet</dd>
             </div>
-        </div>
-    </nav>
+            <div>
+              <dt>Classroom</dt>
+              <dd>Tablets, edge kits, peer circles</dd>
+            </div>
+            <div>
+              <dt>Core signal</dt>
+              <dd>Prompt craft, media generation, local agents</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
 
-    <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat transform scale-105 transition-all duration-700"
-                style="background-attachment: fixed; filter: var(--hero-filter);"></div>
-            <div
-                class="absolute inset-0 bg-gradient-to-b from-mountain-blue/80 via-mountain-blue/60 to-mountain-blue/90">
-            </div>
+      <section class="intro-band" aria-label="Project philosophy">
+        <div class="intro-text">
+          <p class="section-kicker">Bridging Himalayan stillness with a digital pulse</p>
+          <h2>Ancient routes. Autonomous tools. Local futures.</h2>
+        </div>
+        <p>
+          CyberScout bypasses brittle infrastructure by becoming lightweight, rugged, and
+          community-shaped. The classroom arrives as a living edge node: a mentor, a weatherproof
+          tech pack, tablets, battery resilience, and a curriculum that treats AI as a language for
+          thinking, preserving, making, and self-determination.
+        </p>
+      </section>
+
+      <section class="field-system" id="field-system">
+        <div class="section-heading">
+          <p class="section-kicker">Core Mechanics</p>
+          <h2>The EUC Mobile Classroom</h2>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-electric-teal mb-8 animate-fade-in-up"
-                style="animation-delay: 0.1s;">
-                <span class="relative flex h-3 w-3">
-                    <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric-teal opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-electric-teal"></span>
-                </span>
-                <span class="font-medium text-sm tracking-wide uppercase">Pilot Launching in Dharamshala</span>
-            </div>
-
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-tight animate-fade-in-up"
-                style="animation-delay: 0.2s;">
-                Cyberscout: <br /><span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-electric-teal to-blue-400">AI on
-                    Wheels.</span>
-            </h1>
-
-            <p class="mt-4 text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10 font-light animate-fade-in-up"
-                style="animation-delay: 0.3s;">
-                Bridging the digital divide across the Himalayas, one school at a time. Empowering the next generation
-                with mobile tech and generative AI.
+        <div class="system-grid">
+          <article class="system-card">
+            <span class="card-index">01</span>
+            <h3>Hyper-mobile operator</h3>
+            <p>
+              A trained CyberScout moves across narrow mountain paths on an electric unicycle,
+              carrying a deployable classroom where roads and institutions thin out.
             </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
-                <a href="#mission"
-                    class="bg-electric-teal text-mountain-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-electric-teal-dark hover:shadow-[0_0_30px_rgba(0,209,193,0.5)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                    Discover Our Mission
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-                <a href="#contact"
-                    class="bg-white/10 text-white backdrop-blur-md border border-white/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2">
-                    Invite a Scout
-                </a>
-            </div>
+          </article>
+          <article class="system-card">
+            <span class="card-index">02</span>
+            <h3>Off-grid tech kit</h3>
+            <p>
+              Rugged tablets, mobile batteries, local content packs, and safe AI sandboxes create a
+              low-latency learning surface for remote villages.
+            </p>
+          </article>
+          <article class="system-card">
+            <span class="card-index">03</span>
+            <h3>Edge classroom</h3>
+            <p>
+              Peer circles learn by building: prompt systems, image stories, language tools,
+              community archives, and localized agent prototypes.
+            </p>
+          </article>
         </div>
 
-        <!-- Scroll indicator -->
-        <div
-            class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center text-white/50">
-            <span class="text-sm font-medium mb-2 uppercase tracking-widest">Scroll to explore</span>
-            <i data-lucide="mouse" class="w-6 h-6"></i>
+        <div class="architecture" aria-label="CyberScout architecture diagram">
+          <div class="arch-node operator">
+            <span>Operator</span>
+            <strong>EUC Scout</strong>
+          </div>
+          <div class="arch-line"></div>
+          <div class="arch-node kit">
+            <span>Kit</span>
+            <strong>Tablets + Sandboxes</strong>
+          </div>
+          <div class="arch-line"></div>
+          <div class="arch-node classroom">
+            <span>Classroom</span>
+            <strong>Peer AI Lab</strong>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-24 bg-mountain-blue relative overflow-hidden border-t border-white/10">
-        <!-- Abstract gradient background element to keep the tone similar to hero -->
-        <div
-            class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-electric-teal/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2">
+      <section class="sovereignty">
+        <div class="section-heading">
+          <p class="section-kicker">Digital Sovereignty</p>
+          <h2>From consuming the future to authoring it.</h2>
         </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 roll-in-bottom">
-                <h2 class="text-4xl font-bold text-white mb-4">Glimpses of Our Journey.</h2>
-                <div class="w-20 h-1.5 bg-electric-teal mx-auto mb-6 rounded-full"></div>
-                <p class="text-blue-100/80 text-lg max-w-2xl mx-auto">From the school grounds of Dharamshala to the
-                    streams of Palampur, bringing AI education wherever the trail leads.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Large image spanning 2 columns/rows -->
-                <div
-                    class="relative group overflow-hidden rounded-[2rem] md:col-span-2 md:row-span-2 aspect-[16/9] shadow-2xl border border-white/10 hover:border-electric-teal/30 transition-colors duration-500 roll-in-bottom">
-                    <img src="assets/gallery/gallery_school_ground_1773229915456.png"
-                        alt="Electric unicyclist arriving at a school ground in Dharamshala"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-mountain-blue via-mountain-blue/20 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-300">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-electric-teal mb-3 text-xs font-bold uppercase tracking-wider">
-                            <i data-lucide="map-pin" class="w-3 h-3"></i> Dharamshala
-                        </div>
-                        <h3 class="text-3xl font-bold text-white mb-2 leading-tight">School Ground Arrival</h3>
-                        <p class="text-blue-100/80 text-lg max-w-lg">Kids eagerly gather around as a Tech-Nomad arrives
-                            with a backpack full of smart tablets.</p>
-                    </div>
-                </div>
-
-                <!-- Grid Item 2 -->
-                <div class="relative group overflow-hidden rounded-[2rem] aspect-[4/3] shadow-xl border border-white/10 hover:border-electric-teal/30 transition-colors duration-500 roll-in-bottom"
-                    style="transition-delay: 100ms;">
-                    <img src="assets/gallery/gallery_water_stream_1773229947466.png"
-                        alt="Generative AI near a crystal clear stream in Palampur"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-mountain-blue via-mountain-blue/30 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-300">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                        <div
-                            class="inline-flex items-center gap-2 text-electric-teal mb-2 text-xs font-bold uppercase tracking-wider">
-                            <i data-lucide="map-pin" class="w-3 h-3"></i> Palampur
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-1">Riverside Learning</h3>
-                        <p class="text-blue-100/80 text-sm">Learning Generative AI amidst nature.</p>
-                    </div>
-                </div>
-
-                <!-- Grid Item 3 -->
-                <div class="relative group overflow-hidden rounded-[2rem] aspect-[4/3] shadow-xl border border-white/10 hover:border-electric-teal/30 transition-colors duration-500 roll-in-bottom"
-                    style="transition-delay: 200ms;">
-                    <img src="assets/gallery/gallery_jungle_trail_1773229967281.png"
-                        alt="Electric unicyclist riding through a lush green jungle trail"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-mountain-blue via-mountain-blue/30 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-300">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                        <div
-                            class="inline-flex items-center gap-2 text-electric-teal mb-2 text-xs font-bold uppercase tracking-wider">
-                            <i data-lucide="map-pin" class="w-3 h-3"></i> Dhauladhar Trails
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-1">Jungle Commute</h3>
-                        <p class="text-blue-100/80 text-sm">Navigating remote Himalayan paths.</p>
-                    </div>
-                </div>
-
-                <!-- Grid Item 4 -->
-                <div class="relative group overflow-hidden rounded-[2rem] aspect-[4/3] shadow-xl border border-white/10 hover:border-electric-teal/30 transition-colors duration-500 roll-in-bottom"
-                    style="transition-delay: 300ms;">
-                    <img src="assets/gallery/gallery_kids_tablets_1773230022317.png"
-                        alt="Himalayan kids using smart tablets in a meadow"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-mountain-blue via-mountain-blue/30 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-300">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                        <div
-                            class="inline-flex items-center gap-2 text-electric-teal mb-2 text-xs font-bold uppercase tracking-wider">
-                            <i data-lucide="map-pin" class="w-3 h-3"></i> Dharamshala
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-1">Meadow Classrooms</h3>
-                        <p class="text-blue-100/80 text-sm">Interactive tablet sessions on the grass.</p>
-                    </div>
-                </div>
-
-                <!-- Grid Item 5 -->
-                <div class="relative group overflow-hidden rounded-[2rem] aspect-[4/3] shadow-xl border border-white/10 hover:border-electric-teal/30 transition-colors duration-500 roll-in-bottom md:col-span-2 lg:col-span-1"
-                    style="transition-delay: 400ms;">
-                    <img src="assets/gallery/gallery_village_youth_1773230167629.png"
-                        alt="Showcasing AI to local village youth at sunset"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-mountain-blue via-mountain-blue/30 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-300">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                        <div
-                            class="inline-flex items-center gap-2 text-electric-teal mb-2 text-xs font-bold uppercase tracking-wider">
-                            <i data-lucide="map-pin" class="w-3 h-3"></i> Palampur
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-1">Village Sunset</h3>
-                        <p class="text-blue-100/80 text-sm">Inspiring the youth at golden hour.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="sovereignty-grid">
+          <article>
+            <h3>Prompt as thought</h3>
+            <p>
+              Students learn prompts as a practical extension of observation, questioning, and
+              creative control, not as magic commands.
+            </p>
+          </article>
+          <article>
+            <h3>Culture as source material</h3>
+            <p>
+              Folklore, landscapes, dialects, farm wisdom, and village memory become living inputs
+              for visual, sonic, and archival creation.
+            </p>
+          </article>
+          <article>
+            <h3>Agents for local problems</h3>
+            <p>
+              Youth and women's collectives prototype simple autonomous workflows for translation,
+              farming logs, learning support, and digital records.
+            </p>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <!-- The Mission -->
-    <section id="mission" class="py-24 bg-warm-slate relative overflow-hidden">
-        <div
-            class="absolute top-0 left-0 w-64 h-64 bg-electric-teal/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
-        </div>
-        <div
-            class="absolute bottom-0 right-0 w-96 h-96 bg-mountain-blue/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3">
+      <section class="curriculum" id="curriculum">
+        <div class="section-heading">
+          <p class="section-kicker">Curriculum Framework</p>
+          <h2>Three phases from curiosity to agency.</h2>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="roll-in-left">
-                    <h2 class="text-4xl font-bold text-mountain-blue mb-6">The Mobile AI Literacy Initiative.</h2>
-                    <div class="w-20 h-1.5 bg-electric-teal mb-8 rounded-full"></div>
-                    <p class="text-lg text-dark-slate mb-6 leading-relaxed">
-                        In the remote valleys of the Himalayas, access to modern technology and AI education is limited.
-                        Cyberscout changes that paradigm.
-                    </p>
-                    <p class="text-lg text-dark-slate mb-8 leading-relaxed">
-                        We deploy "Tech-Nomads"—experts backpacking with modern high-speed ultra-smart tablets, portable
-                        wifi dongles, and power banks, all transported seamlessly on robust Electric Unicycles (EUCs).
-                        We bring the
-                        classroom of the future directly to remote schools.
-                    </p>
-                    <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
-                        <div class="bg-mountain-blue text-electric-teal p-3 rounded-xl">
-                            <i data-lucide="map-pin" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-mountain-blue">Phase 1 Pilot</h4>
-                            <p class="text-sm text-slate-500">Currently operating in Dharamshala, HP.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative roll-in-right">
-                    <div
-                        class="aspect-square bg-gradient-to-br from-mountain-blue to-dark-slate rounded-[2rem] p-1 shadow-2xl relative">
-                        <div
-                            class="absolute inset-0 bg-hero-pattern bg-cover bg-center rounded-[2rem] opacity-50 mix-blend-overlay">
-                        </div>
-                        <div
-                            class="h-full w-full bg-mountain-blue/40 rounded-[2rem] relative flex items-center justify-center p-8 backdrop-blur-sm">
-                            <div class="text-center">
-                                <i data-lucide="cpu" class="w-24 h-24 text-electric-teal mx-auto mb-6 opacity-80"></i>
-                                <h3 class="text-3xl font-bold text-white mb-2">Edge Computing</h3>
-                                <p class="text-blue-100/80 text-lg">Bringing cloud power to the mountains.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Decorative element -->
-                    <div
-                        class="absolute -bottom-8 -left-8 bg-electric-teal text-mountain-blue p-6 rounded-2xl shadow-xl animate-float">
-                        <i data-lucide="battery-charging" class="w-10 h-10 mb-2"></i>
-                        <div class="font-bold text-xl">100%</div>
-                        <div class="text-sm font-medium">Portable Power</div>
-                    </div>
-                </div>
-            </div>
+        <div class="curriculum-shell">
+          <div class="phase-tabs" role="tablist" aria-label="Curriculum phases">
+            <button class="phase-tab active" type="button" role="tab" aria-selected="true" data-phase="awakening">
+              <span>Phase 1</span>
+              Digital Awakening
+            </button>
+            <button class="phase-tab" type="button" role="tab" aria-selected="false" data-phase="creation">
+              <span>Phase 2</span>
+              Generative Creativity
+            </button>
+            <button class="phase-tab" type="button" role="tab" aria-selected="false" data-phase="agents">
+              <span>Phase 3</span>
+              Autonomous Agents
+            </button>
+          </div>
+
+          <article class="phase-panel" aria-live="polite">
+            <p class="phase-label" id="phase-label">Phase 1</p>
+            <h3 id="phase-title">Digital Awakening & AI Literacy</h3>
+            <p id="phase-copy">
+              Demystify neural networks, compare search with conversational AI, and practice prompt
+              engineering as clear thinking made visible.
+            </p>
+            <ul class="module-list" id="phase-modules">
+              <li>AI myths, model behavior, and everyday safety</li>
+              <li>Prompt craft for questions, stories, and study</li>
+              <li>Tablet-first exploration with local examples</li>
+            </ul>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <!-- What We Do -->
-    <section id="what-we-do" class="py-24 bg-mountain-blue relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 roll-in-bottom">
-                <h2 class="text-4xl font-bold text-white mb-4">What We Do.</h2>
-                <div class="w-20 h-1.5 bg-electric-teal mx-auto mb-6 rounded-full"></div>
-                <p class="text-blue-100 text-lg max-w-2xl mx-auto">Equipping the next generation with the tools to
-                    navigate and build the future.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-dark-slate/50 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 roll-in-bottom"
-                    style="transition-delay: 100ms;">
-                    <div
-                        class="w-14 h-14 bg-electric-teal/20 rounded-2xl flex items-center justify-center mb-6 text-electric-teal">
-                        <i data-lucide="compass" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Sustainable Travel</h3>
-                    <p class="text-blue-100/80 leading-relaxed">
-                        Navigating rough mountain terrain using high-performance Electric Unicycles, minimizing our
-                        carbon footprint while maximizing reach.
-                    </p>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-dark-slate/50 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 roll-in-bottom"
-                    style="transition-delay: 200ms;">
-                    <div
-                        class="w-14 h-14 bg-electric-teal/20 rounded-2xl flex items-center justify-center mb-6 text-electric-teal">
-                        <i data-lucide="bot" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Hands-on AI</h3>
-                    <p class="text-blue-100/80 leading-relaxed">
-                        Interactive sessions exploring ChatGPT, Gemini, Claude, and more. Starting with fun, playful
-                        concepts, before gradually advancing to deeper programming and design skills using portable wifi
-                        setups.
-                    </p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-dark-slate/50 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 roll-in-bottom"
-                    style="transition-delay: 300ms;">
-                    <div
-                        class="w-14 h-14 bg-electric-teal/20 rounded-2xl flex items-center justify-center mb-6 text-electric-teal">
-                        <i data-lucide="palette" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Boosting Imagination</h3>
-                    <p class="text-blue-100/80 leading-relaxed">
-                        Supercharging creative writing, art, and storytelling. We turn technology into an active canvas
-                        to give students a massive boost to their imagination and curiosity.
-                    </p>
-                </div>
-            </div>
+      <section class="roadmap" id="roadmap">
+        <div class="section-heading">
+          <p class="section-kicker">Pilot & Roadmap</p>
+          <h2>A decentralized blueprint built in the field.</h2>
         </div>
-    </section>
-
-    <!-- Impact Areas -->
-    <section id="impact" class="py-24 bg-warm-slate">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 roll-in-bottom">
-                <h2 class="text-4xl font-bold text-mountain-blue mb-4">Impact Areas.</h2>
-                <div class="w-20 h-1.5 bg-electric-teal mx-auto mb-6 rounded-full"></div>
-                <p class="text-dark-slate text-lg max-w-2xl mx-auto">AI literacy applies to every facet of life in the
-                    Himalayas.</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div
-                    class="bg-white rounded-3xl p-8 text-center shadow-sm border border-slate-100 hover:shadow-xl hover:border-electric-teal/30 transition-all roll-in-bottom">
-                    <div
-                        class="w-16 h-16 bg-blue-50 text-mountain-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="leaf" class="w-8 h-8 text-electric-teal"></i>
-                    </div>
-                    <h4 class="font-bold text-mountain-blue">Agriculture</h4>
-                </div>
-                <div class="bg-white rounded-3xl p-8 text-center shadow-sm border border-slate-100 hover:shadow-xl hover:border-electric-teal/30 transition-all roll-in-bottom"
-                    style="transition-delay: 100ms;">
-                    <div
-                        class="w-16 h-16 bg-blue-50 text-mountain-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="book-open" class="w-8 h-8 text-electric-teal"></i>
-                    </div>
-                    <h4 class="font-bold text-mountain-blue">Education</h4>
-                </div>
-                <div class="bg-white rounded-3xl p-8 text-center shadow-sm border border-slate-100 hover:shadow-xl hover:border-electric-teal/30 transition-all roll-in-bottom"
-                    style="transition-delay: 200ms;">
-                    <div
-                        class="w-16 h-16 bg-blue-50 text-mountain-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="heart-pulse" class="w-8 h-8 text-electric-teal"></i>
-                    </div>
-                    <h4 class="font-bold text-mountain-blue">Healthcare</h4>
-                </div>
-                <div class="bg-white rounded-3xl p-8 text-center shadow-sm border border-slate-100 hover:shadow-xl hover:border-electric-teal/30 transition-all roll-in-bottom"
-                    style="transition-delay: 300ms;">
-                    <div
-                        class="w-16 h-16 bg-blue-50 text-mountain-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="briefcase" class="w-8 h-8 text-electric-teal"></i>
-                    </div>
-                    <h4 class="font-bold text-mountain-blue">Local Biz</h4>
-                </div>
-            </div>
+        <div class="timeline">
+          <article class="timeline-item active">
+            <span>Active</span>
+            <h3>Phase I</h3>
+            <p>Localized pilots in select mountain schools with tablets and curated AI toolkits.</p>
+          </article>
+          <article class="timeline-item">
+            <span>Upcoming</span>
+            <h3>Phase II</h3>
+            <p>Farm collectives and local training centers expand the curriculum for young women and grassroots innovators.</p>
+          </article>
+          <article class="timeline-item">
+            <span>Long-term</span>
+            <h3>Phase III</h3>
+            <p>Open-source the EUC Mobile Classroom blueprint for decentralized deployment globally.</p>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <!-- Contact CTA -->
-    <section id="contact" class="py-32 relative overflow-hidden border-t border-white/10">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 transition-all duration-700 hover:scale-100"
-                style="background-image: url('assets/cta_banner.png'); background-attachment: fixed; filter: var(--hero-filter);">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-mountain-blue via-mountain-blue/70 to-mountain-blue/90">
-            </div>
-        </div>
+      <section class="closing">
+        <p class="section-kicker">Open-source Philosophy</p>
+        <h2>The tools of the future should belong to those who cultivate the stillness of the earth.</h2>
+        <a class="button primary" href="#top">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m18 15-6-6-6 6" />
+          </svg>
+          Return to signal
+        </a>
+      </section>
+    </main>
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div
-                class="bg-dark-slate/80 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl roll-in-bottom">
-                <div class="text-center mb-10">
-                    <h2 class="text-4xl font-bold text-white mb-4">Invite a Scout.</h2>
-                    <p class="text-blue-100 text-lg">Bring the Cyberscout initiative to your school or community center
-                        in Dharamshala.</p>
-                </div>
-
-                <form id="contact-form" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-blue-100 mb-2">Your Name</label>
-                            <input type="text" id="name" required
-                                class="w-full bg-mountain-blue/50 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-electric-teal transition-all"
-                                placeholder="Jane Doe">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-blue-100 mb-2">Email
-                                Address</label>
-                            <input type="email" id="email" required
-                                class="w-full bg-mountain-blue/50 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-electric-teal transition-all"
-                                placeholder="jane@school.org">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="school" class="block text-sm font-medium text-blue-100 mb-2">School /
-                            Organization</label>
-                        <input type="text" id="school" required
-                            class="w-full bg-mountain-blue/50 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-electric-teal transition-all"
-                            placeholder="Dharamshala Public School">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-blue-100 mb-2">Message</label>
-                        <textarea id="message" rows="4" required
-                            class="w-full bg-mountain-blue/50 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-electric-teal transition-all"
-                            placeholder="Tell us about your students..."></textarea>
-                    </div>
-
-                    <button type="submit"
-                        class="w-full bg-electric-teal text-mountain-blue font-bold text-lg py-4 rounded-xl hover:bg-white hover:text-mountain-blue hover:shadow-[0_0_20px_rgba(0,209,193,0.6)] transition-all flex justify-center items-center gap-2 group">
-                        <span>Send Request</span>
-                        <i data-lucide="send" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-
-                    <div id="form-success"
-                        class="hidden text-center mt-4 p-4 rounded-xl bg-electric-teal/20 text-electric-teal border border-electric-teal/50">
-                        <i data-lucide="check-circle" class="w-6 h-6 inline-block mb-1"></i>
-                        <p class="font-medium">Request sent successfully! A scout will contact you soon.</p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#0f1b29] py-8 border-t border-white/5">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <i data-lucide="zap" class="text-electric-teal w-6 h-6"></i>
-                <span class="font-bold text-white text-lg tracking-tight">Cyberscout</span>
-            </div>
-            <p class="text-blue-100/60 text-sm">© 2026 The Himalayan Community Initiative. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Main Content Scripts -->
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
