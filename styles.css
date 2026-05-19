@@ -24,6 +24,14 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+}
+
+#field-system,
+#rakkar-pilot,
+#curriculum,
+#roadmap {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
 }
 
 body {
@@ -328,6 +336,7 @@ p {
 }
 
 .intro-band,
+.pilot,
 .field-system,
 .sovereignty,
 .curriculum,
@@ -351,6 +360,216 @@ p {
 .intro-band p:last-child {
   margin-bottom: 0;
   font-size: clamp(1rem, 1.5vw, 1.18rem);
+}
+
+.pilot {
+  background:
+    linear-gradient(180deg, rgba(77, 201, 184, 0.08), rgba(9, 11, 13, 0) 55%),
+    linear-gradient(90deg, rgba(242, 162, 58, 0.08), transparent 42%),
+    rgba(244, 235, 215, 0.02);
+}
+
+.pilot .section-heading {
+  max-width: 980px;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.pilot-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(300px, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.pilot-brief,
+.guideline-stack article,
+.trainer-protocol article {
+  border: 1px solid rgba(244, 235, 215, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(244, 235, 215, 0.08), rgba(244, 235, 215, 0.025)),
+    rgba(12, 14, 13, 0.76);
+}
+
+.pilot-brief {
+  display: grid;
+  min-height: 560px;
+  align-content: space-between;
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+}
+
+.pilot-brief h3 {
+  max-width: 650px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 0.98;
+}
+
+.pilot-brief p:not(.phase-label) {
+  max-width: 690px;
+}
+
+.pilot-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.pilot-stats div {
+  min-height: 112px;
+  padding: 1rem;
+  border: 1px solid rgba(77, 201, 184, 0.22);
+  border-radius: 8px;
+  background: rgba(77, 201, 184, 0.08);
+}
+
+.pilot-stats strong,
+.pilot-stats span {
+  display: block;
+}
+
+.pilot-stats strong {
+  margin-bottom: 0.8rem;
+  color: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  line-height: 1;
+}
+
+.pilot-stats span {
+  color: rgba(244, 235, 215, 0.7);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guideline-stack {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.guideline-stack article {
+  min-height: 172px;
+  padding: clamp(1.25rem, 2vw, 1.6rem);
+}
+
+.guideline-stack .card-index {
+  margin-bottom: 1.4rem;
+}
+
+.trainer-protocol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.trainer-protocol article {
+  min-height: 230px;
+  padding: clamp(1.25rem, 2vw, 1.6rem);
+}
+
+.trainer-protocol .card-index {
+  margin-bottom: 1.5rem;
+}
+
+.trainer-protocol p {
+  margin-bottom: 0;
+}
+
+.trainer-protocol ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  color: rgba(244, 235, 215, 0.78);
+  line-height: 1.55;
+  list-style: none;
+}
+
+.trainer-protocol li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.trainer-protocol li::before {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  content: "";
+  background: var(--teal);
+}
+
+.activity-plan {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid rgba(244, 235, 215, 0.14);
+}
+
+.activity-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.5fr) minmax(280px, 1fr);
+  gap: clamp(1rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.activity-heading .section-kicker {
+  margin-bottom: 0;
+}
+
+.activity-heading h3 {
+  margin-bottom: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 3.8rem);
+  line-height: 0.98;
+}
+
+.activity-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.8rem, 1.6vw, 1.15rem);
+}
+
+.activity-board article {
+  min-height: 220px;
+  padding: 1.1rem;
+  border: 1px solid rgba(244, 235, 215, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(77, 201, 184, 0.08), rgba(244, 235, 215, 0.025)),
+    rgba(12, 14, 13, 0.72);
+}
+
+.activity-board span {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+  border: 1px solid rgba(242, 162, 58, 0.4);
+  border-radius: 8px;
+  color: var(--saffron);
+  font-size: 0.78rem;
+  font-weight: 950;
+}
+
+.activity-board h4 {
+  margin: 0 0 0.85rem;
+  color: var(--paper);
+  font-size: clamp(1rem, 1.6vw, 1.26rem);
+  line-height: 1.18;
+}
+
+.activity-board p {
+  margin-bottom: 0;
+  line-height: 1.6;
 }
 
 .section-heading {
@@ -609,12 +828,16 @@ p {
 
   .intro-band,
   .section-heading,
+  .pilot-grid,
+  .activity-heading,
   .curriculum-shell {
     grid-template-columns: 1fr;
   }
 
   .system-grid,
   .sovereignty-grid,
+  .trainer-protocol,
+  .activity-board,
   .timeline,
   .module-list {
     grid-template-columns: 1fr;
@@ -646,8 +869,8 @@ p {
   }
 
   .site-nav {
-    gap: 0.75rem;
-    font-size: 0.78rem;
+    gap: 0.62rem;
+    font-size: 0.72rem;
   }
 
   .hero {
@@ -676,6 +899,7 @@ p {
   }
 
   .intro-band,
+  .pilot,
   .field-system,
   .sovereignty,
   .curriculum,
@@ -686,6 +910,19 @@ p {
 
   .phase-tab.active {
     transform: none;
+  }
+
+  .pilot-brief {
+    min-height: auto;
+  }
+
+  .pilot-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .trainer-protocol article,
+  .activity-board article {
+    min-height: auto;
   }
 }
 
