@@ -95,16 +95,109 @@ a {
 
 .brand-mark {
   display: grid;
-  width: 40px;
-  height: 40px;
+  position: relative;
+  width: 46px;
+  height: 46px;
   place-items: center;
-  border: 1px solid rgba(244, 235, 215, 0.42);
+  border: 1px solid rgba(244, 235, 215, 0.36);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(242, 162, 58, 0.2), rgba(77, 201, 184, 0.18)),
-    rgba(244, 235, 215, 0.08);
-  color: var(--paper);
-  font-size: 0.78rem;
+    radial-gradient(circle at 50% 45%, rgba(242, 162, 58, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(242, 162, 58, 0.18), rgba(77, 201, 184, 0.16)),
+    rgba(244, 235, 215, 0.07);
+  box-shadow:
+    inset 0 0 22px rgba(77, 201, 184, 0.1),
+    0 0 0 rgba(77, 201, 184, 0);
+  overflow: hidden;
+  animation: logo-breathe 4.6s ease-in-out infinite;
+}
+
+.brand-mark::after {
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(77, 201, 184, 0.2);
+  border-radius: 6px;
+  content: "";
+  opacity: 0.7;
+}
+
+.lotus-logo {
+  position: relative;
+  z-index: 1;
+  width: 38px;
+  height: 38px;
+  overflow: visible;
+}
+
+.lotus-aura,
+.signal-orbit,
+.chip-line,
+.lotus-petal,
+.chip-core {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.lotus-aura {
+  stroke: rgba(77, 201, 184, 0.42);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.aura-one {
+  animation: aura-breathe 4.6s ease-in-out infinite;
+}
+
+.aura-two {
+  stroke: rgba(242, 162, 58, 0.28);
+  stroke-dasharray: 5 6;
+  animation: aura-breathe 4.6s ease-in-out 0.7s infinite;
+}
+
+.lotus-petal {
+  fill: rgba(242, 162, 58, 0.18);
+  stroke: rgba(244, 235, 215, 0.82);
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: petal-breathe 4.6s ease-in-out infinite;
+}
+
+.petal-left,
+.petal-right {
+  stroke: rgba(77, 201, 184, 0.82);
+  animation-delay: 0.15s;
+}
+
+.petal-base-left,
+.petal-base-right {
+  fill: rgba(77, 201, 184, 0.12);
+  animation-delay: 0.28s;
+}
+
+.chip-core {
+  fill: rgba(9, 11, 13, 0.88);
+  stroke: rgba(242, 162, 58, 0.92);
+  stroke-width: 1.8;
+  animation: chip-glow 2.3s ease-in-out infinite;
+}
+
+.chip-line {
+  stroke: rgba(77, 201, 184, 0.82);
+  stroke-linecap: round;
+  stroke-width: 1.4;
+  stroke-dasharray: 5 4;
+  animation: chip-pulse 2.3s ease-in-out infinite;
+}
+
+.signal-orbit {
+  stroke: rgba(242, 162, 58, 0.88);
+  stroke-linecap: round;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+  animation: orbit-flow 3.2s linear infinite;
 }
 
 .site-nav {
@@ -1006,6 +1099,72 @@ p {
   50% {
     transform: translateY(-10px) scale(1.25);
     opacity: 1;
+  }
+}
+
+@keyframes logo-breathe {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 18px rgba(77, 201, 184, 0.08),
+      0 0 0 rgba(77, 201, 184, 0);
+    transform: scale(0.96);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 26px rgba(242, 162, 58, 0.18),
+      0 0 28px rgba(77, 201, 184, 0.34);
+    transform: scale(1.04);
+  }
+}
+
+@keyframes aura-breathe {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.86);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes petal-breathe {
+  0%,
+  100% {
+    transform: scale(0.96);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes chip-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(242, 162, 58, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(242, 162, 58, 0.74));
+  }
+}
+
+@keyframes chip-pulse {
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.42;
+  }
+  50% {
+    stroke-dashoffset: -9;
+    opacity: 1;
+  }
+}
+
+@keyframes orbit-flow {
+  to {
+    stroke-dashoffset: -18;
   }
 }
 
