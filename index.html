@@ -10,7 +10,7 @@
     <title>CyberScout | Mobile AI Literacy Initiative</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="assets/cyberscout-hero.png" as="image" />
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
   <body>
     <header class="site-header">
@@ -24,6 +24,13 @@
         <a href="#curriculum">Curriculum</a>
         <a href="#roadmap">Roadmap</a>
       </nav>
+      <div class="language-control">
+        <label for="language-select">Language</label>
+        <select id="language-select" aria-label="Select website language">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+      </div>
     </header>
 
     <main id="top">
@@ -43,13 +50,13 @@
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2Zm4-12h7M8 11h7M8 15h5" />
               </svg>
-              Explore curriculum
+              <span>Explore curriculum</span>
             </a>
             <a class="button secondary" href="#field-system">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19" />
               </svg>
-              See field system
+              <span>See field system</span>
             </a>
           </div>
         </div>
@@ -374,11 +381,11 @@
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="m18 15-6-6-6 6" />
           </svg>
-          Return to signal
+          <span>Return to signal</span>
         </a>
       </section>
     </main>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=8"></script>
   </body>
 </html>
