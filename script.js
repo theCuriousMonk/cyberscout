@@ -3,7 +3,7 @@ const translations = {
     title: "CyberScout | Mobile AI Literacy Initiative",
     description:
       "CyberScout is a mobile-first AI literacy initiative for remote Himalayan communities, blending ancient resilience with generative AI education.",
-    nav: ["System", "Pilot", "Gallery", "Curriculum", "Roadmap"],
+    nav: ["Gallery", "Pilot", "System", "Curriculum", "Roadmap"],
     languageLabel: "Language",
     hero: {
       eyebrow: "Mobile AI Literacy Initiative",
@@ -180,7 +180,7 @@ const translations = {
     title: "CyberScout | मोबाइल AI साक्षरता पहल",
     description:
       "CyberScout दूरस्थ हिमालयी समुदायों के लिए मोबाइल-प्रथम AI साक्षरता पहल है, जो प्राचीन धैर्य को जनरेटिव AI शिक्षा से जोड़ती है।",
-    nav: ["सिस्टम", "पायलट", "गैलरी", "पाठ्यक्रम", "रोडमैप"],
+    nav: ["गैलरी", "पायलट", "सिस्टम", "पाठ्यक्रम", "रोडमैप"],
     languageLabel: "भाषा",
     hero: {
       eyebrow: "मोबाइल AI साक्षरता पहल",
@@ -361,6 +361,10 @@ const phaseTitle = document.querySelector("#phase-title");
 const phaseCopy = document.querySelector("#phase-copy");
 const phaseModules = document.querySelector("#phase-modules");
 const languageSelect = document.querySelector("#language-select");
+const navLinks = [...document.querySelectorAll(".site-nav a")];
+const trackedSections = navLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
 let currentLanguage =
   (translations[urlLanguage] && urlLanguage) || localStorage.getItem("cyberscoutLanguage") || "en";
@@ -387,6 +391,18 @@ function applyCardTriples(selector, triples) {
     if (label) label.textContent = data[0];
     if (heading) heading.textContent = data[1];
     if (copy) copy.textContent = data[2];
+  });
+}
+
+function setActiveNav(sectionId) {
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === `#${sectionId}`;
+    link.classList.toggle("active", isActive);
+    if (isActive) {
+      link.setAttribute("aria-current", "true");
+    } else {
+      link.removeAttribute("aria-current");
+    }
   });
 }
 
@@ -522,6 +538,45 @@ languageSelect?.addEventListener("change", (event) => {
 });
 
 applyLanguage(currentLanguage);
+
+function updateActiveNavFromScroll() {
+  const headerOffset = 220;
+  if (trackedSections[0]?.getBoundingClientRect().top > headerOffset) {
+    setActiveNav(null);
+    return;
+  }
+
+  const currentSection =
+    [...trackedSections]
+      .reverse()
+      .find((section) => section.getBoundingClientRect().top <= headerOffset) || trackedSections[0];
+
+  if (currentSection) setActiveNav(currentSection.id);
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const id = link.getAttribute("href")?.slice(1);
+    const section = id ? document.getElementById(id) : null;
+    if (!section) return;
+
+    event.preventDefault();
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.pushState(null, "", `#${id}`);
+    setActiveNav(id);
+  });
+});
+
+window.addEventListener("scroll", updateActiveNavFromScroll, { passive: true });
+window.addEventListener("resize", updateActiveNavFromScroll);
+updateActiveNavFromScroll();
+
+if (location.hash) {
+  requestAnimationFrame(() => {
+    document.querySelector(location.hash)?.scrollIntoView({ block: "start" });
+    updateActiveNavFromScroll();
+  });
+}
 
 const canvas = document.querySelector("#signal-canvas");
 const context = canvas?.getContext("2d");

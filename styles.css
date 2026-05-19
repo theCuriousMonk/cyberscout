@@ -211,7 +211,13 @@ a {
 
 .site-nav a {
   position: relative;
+  border-radius: 6px;
   padding-block: 0.35rem;
+}
+
+.site-nav a:focus-visible {
+  outline: 2px solid rgba(77, 201, 184, 0.6);
+  outline-offset: 5px;
 }
 
 .site-nav a::after {
@@ -228,6 +234,14 @@ a {
 }
 
 .site-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.site-nav a.active {
+  color: var(--paper);
+}
+
+.site-nav a.active::after {
   transform: scaleX(1);
 }
 
