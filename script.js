@@ -3,7 +3,7 @@ const translations = {
     title: "CyberScout | Mobile AI Literacy Initiative",
     description:
       "CyberScout is a mobile-first AI literacy initiative for remote Himalayan communities, blending ancient resilience with generative AI education.",
-    nav: ["Gallery", "Pilot", "System", "Curriculum", "Roadmap"],
+    nav: ["Nodes", "Gallery", "Pilot", "System", "Curriculum", "Roadmap"],
     languageLabel: "Language",
     hero: {
       eyebrow: "Mobile AI Literacy Initiative",
@@ -14,7 +14,7 @@ const translations = {
       pulse: "Phase I active",
       telemetry: [
         ["Transport", "Electric unicycle fleet"],
-        ["First pilot", "Rakkar, 2 trainers, 2 tablets"],
+        ["Active nodes", "Rakkar + Tikri Musehra"],
         ["Core signal", "Prompt craft, media generation, local agents"],
       ],
     },
@@ -23,6 +23,22 @@ const translations = {
       title: "Ancient routes. Autonomous tools. Local futures.",
       copy:
         "CyberScout bypasses brittle infrastructure by becoming lightweight, rugged, and community-shaped. The classroom arrives as a living edge node: a mentor, a weatherproof tech pack, tablets, battery resilience, and a curriculum that treats AI as a language for thinking, preserving, making, and self-determination.",
+    },
+    nodeMap: {
+      kicker: "CyberScout Nodes",
+      title: "A living signal across Kangra and Mandi.",
+      copy:
+        "The first network is forming across the Dhauladhar foothills: Rakkar anchors the trainer-led pilot near Dharamshala, while Tikri Musehra adds a second tablet node near the Bir-Jogindarnagar corridor.",
+      mapNodes: [
+        ["Rakkar", "2 trainers / 2 tablets"],
+        ["Tikri Musehra", "1 coordinator / 2 tablets"],
+      ],
+      anchors: ["Dharamshala", "Bir"],
+      cards: [
+        ["Node 01", "Rakkar", "2 trainers and 2 tablets supporting self-practice, children's activities, and 40-minute mindful AI literacy sessions."],
+        ["Node 02", "Tikri Musehra", "2 tablets deployed with 1 local coordinator, extending CyberScout toward the Bir-Jogindarnagar learning corridor."],
+        ["Network Pulse", "4 tablets active", "Two mountain nodes now form the first lightweight CyberScout mesh for local imagination, AI awareness, and digital sovereignty."],
+      ],
     },
     gallery: {
       kicker: "Field Gallery",
@@ -165,7 +181,7 @@ const translations = {
       kicker: "Pilot & Roadmap",
       title: "A decentralized blueprint built in the field.",
       items: [
-        ["Active", "Phase I", "Rakkar pilot activation with two trainers, two tablets, 40-minute sessions, and bi-weekly progress reporting."],
+        ["Active", "Phase I", "Rakkar pilot activation with two trainers and two tablets, plus Tikri Musehra with two tablets and one local coordinator."],
         ["Upcoming", "Phase II", "Farm collectives and local training centers expand the curriculum for young women and grassroots innovators."],
         ["Long-term", "Phase III", "Open-source the EUC Mobile Classroom blueprint for decentralized deployment globally."],
       ],
@@ -180,7 +196,7 @@ const translations = {
     title: "CyberScout | मोबाइल AI साक्षरता पहल",
     description:
       "CyberScout दूरस्थ हिमालयी समुदायों के लिए मोबाइल-प्रथम AI साक्षरता पहल है, जो प्राचीन धैर्य को जनरेटिव AI शिक्षा से जोड़ती है।",
-    nav: ["गैलरी", "पायलट", "सिस्टम", "पाठ्यक्रम", "रोडमैप"],
+    nav: ["नोड्स", "गैलरी", "पायलट", "सिस्टम", "पाठ्यक्रम", "रोडमैप"],
     languageLabel: "भाषा",
     hero: {
       eyebrow: "मोबाइल AI साक्षरता पहल",
@@ -191,7 +207,7 @@ const translations = {
       pulse: "फेज I सक्रिय",
       telemetry: [
         ["यातायात", "इलेक्ट्रिक यूनिसाइकिल फ्लीट"],
-        ["पहला पायलट", "रक्कड़, 2 प्रशिक्षक, 2 टैबलेट"],
+        ["सक्रिय नोड्स", "रक्कड़ + टिकरी मुसेहरा"],
         ["मुख्य संकेत", "प्रॉम्प्ट कला, मीडिया निर्माण, स्थानीय एजेंट"],
       ],
     },
@@ -200,6 +216,22 @@ const translations = {
       title: "प्राचीन रास्ते। स्वायत्त औजार। स्थानीय भविष्य।",
       copy:
         "CyberScout हल्का, मजबूत और समुदाय-केंद्रित बनकर कमजोर ढांचे की सीमाएं पार करता है। कक्षा एक जीवित एज नोड की तरह आती है: एक मेंटर, मौसमरोधी टेक पैक, टैबलेट, बैटरी शक्ति और ऐसा पाठ्यक्रम जो AI को सोचने, संरक्षित करने, बनाने और आत्मनिर्भरता की भाषा मानता है।",
+    },
+    nodeMap: {
+      kicker: "CyberScout नोड्स",
+      title: "कांगड़ा और मंडी में फैलता एक जीवित संकेत।",
+      copy:
+        "पहला नेटवर्क धौलाधार की तलहटी में बन रहा है: रक्कड़ Dharamshala के पास trainer-led pilot को anchor करता है, जबकि टिकरी मुसेहरा Bir-Jogindarnagar corridor के पास दूसरा tablet node जोड़ता है।",
+      mapNodes: [
+        ["रक्कड़", "2 प्रशिक्षक / 2 टैबलेट"],
+        ["टिकरी मुसेहरा", "1 coordinator / 2 टैबलेट"],
+      ],
+      anchors: ["Dharamshala", "Bir"],
+      cards: [
+        ["नोड 01", "रक्कड़", "2 प्रशिक्षक और 2 टैबलेट self-practice, बच्चों की गतिविधियों और 40 मिनट के mindful AI literacy sessions को support करते हैं।"],
+        ["नोड 02", "टिकरी मुसेहरा", "1 local coordinator के साथ 2 टैबलेट deployed हैं, जिससे CyberScout Bir-Jogindarnagar learning corridor की ओर बढ़ता है।"],
+        ["Network Pulse", "4 टैबलेट सक्रिय", "दो mountain nodes अब local imagination, AI awareness और digital sovereignty के लिए पहला हल्का CyberScout mesh बनाते हैं।"],
+      ],
     },
     gallery: {
       kicker: "फील्ड गैलरी",
@@ -342,7 +374,7 @@ const translations = {
       kicker: "पायलट और रोडमैप",
       title: "फील्ड में बनता विकेंद्रीकृत blueprint.",
       items: [
-        ["सक्रिय", "चरण I", "रक्कड़ पायलट: दो प्रशिक्षक, दो टैबलेट, 40 मिनट के सत्र और हर दो सप्ताह में प्रगति रिपोर्टिंग।"],
+        ["सक्रिय", "चरण I", "रक्कड़ पायलट में दो प्रशिक्षक और दो टैबलेट सक्रिय हैं, साथ ही टिकरी मुसेहरा में एक local coordinator और दो टैबलेट deployed हैं।"],
         ["आगामी", "चरण II", "फार्म कलेक्टिव और स्थानीय प्रशिक्षण केंद्र युवा महिलाओं और grassroots innovators के लिए पाठ्यक्रम को आगे बढ़ाएंगे।"],
         ["दीर्घकालिक", "चरण III", "EUC मोबाइल कक्षा blueprint को वैश्विक विकेंद्रीकृत deployment के लिए open-source करना।"],
       ],
@@ -435,6 +467,21 @@ function applyLanguage(language) {
   setText(".intro-band .section-kicker", t.intro.kicker);
   setText(".intro-band h2", t.intro.title);
   setText(".intro-band > p", t.intro.copy);
+
+  setText(".node-map .section-kicker", t.nodeMap.kicker);
+  setText(".node-map-copy h2", t.nodeMap.title);
+  setText(".node-map-copy p:last-child", t.nodeMap.copy);
+  document.querySelectorAll(".map-node").forEach((node, index) => {
+    const data = t.nodeMap.mapNodes[index];
+    if (!data) return;
+    const labels = node.querySelectorAll("text");
+    if (labels[0]) labels[0].textContent = data[0];
+    if (labels[1]) labels[1].textContent = data[1];
+  });
+  document.querySelectorAll(".map-anchor text").forEach((label, index) => {
+    if (t.nodeMap.anchors[index]) label.textContent = t.nodeMap.anchors[index];
+  });
+  applyCardTriples(".node-cards article", t.nodeMap.cards);
 
   setText(".gallery .section-kicker", t.gallery.kicker);
   setText(".gallery-heading h2", t.gallery.title);
@@ -571,11 +618,22 @@ window.addEventListener("scroll", updateActiveNavFromScroll, { passive: true });
 window.addEventListener("resize", updateActiveNavFromScroll);
 updateActiveNavFromScroll();
 
+function scrollToHashTarget() {
+  if (!location.hash) return;
+  document.querySelector(location.hash)?.scrollIntoView({ block: "start" });
+  updateActiveNavFromScroll();
+}
+
 if (location.hash) {
-  requestAnimationFrame(() => {
-    document.querySelector(location.hash)?.scrollIntoView({ block: "start" });
-    updateActiveNavFromScroll();
-  });
+  requestAnimationFrame(scrollToHashTarget);
+  window.addEventListener(
+    "load",
+    () => {
+      scrollToHashTarget();
+      window.setTimeout(scrollToHashTarget, 250);
+    },
+    { once: true },
+  );
 }
 
 const canvas = document.querySelector("#signal-canvas");

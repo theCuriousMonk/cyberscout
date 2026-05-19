@@ -10,7 +10,7 @@
     <title>CyberScout | Mobile AI Literacy Initiative</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="assets/cyberscout-hero.png" as="image" />
-    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="styles.css?v=22" />
   </head>
   <body>
     <header class="site-header">
@@ -32,6 +32,7 @@
         <span>CyberScout</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#node-map">Nodes</a>
         <a href="#gallery">Gallery</a>
         <a href="#rakkar-pilot">Pilot</a>
         <a href="#field-system">System</a>
@@ -85,8 +86,8 @@
               <dd>Electric unicycle fleet</dd>
             </div>
             <div>
-              <dt>First pilot</dt>
-              <dd>Rakkar, 2 trainers, 2 tablets</dd>
+              <dt>Active nodes</dt>
+              <dd>Rakkar + Tikri Musehra</dd>
             </div>
             <div>
               <dt>Core signal</dt>
@@ -107,6 +108,82 @@
           tech pack, tablets, battery resilience, and a curriculum that treats AI as a language for
           thinking, preserving, making, and self-determination.
         </p>
+      </section>
+
+      <section class="node-map" id="node-map" aria-label="CyberScout node map">
+        <div class="node-map-copy">
+          <p class="section-kicker">CyberScout Nodes</p>
+          <h2>A living signal across Kangra and Mandi.</h2>
+          <p>
+            The first network is forming across the Dhauladhar foothills: Rakkar anchors the
+            trainer-led pilot near Dharamshala, while Tikri Musehra adds a second tablet node near
+            the Bir-Jogindarnagar corridor.
+          </p>
+        </div>
+
+        <div class="map-shell">
+          <svg class="signal-map" viewBox="0 0 760 460" role="img" aria-labelledby="map-title map-desc">
+            <title id="map-title">CyberScout nodes in Himachal Pradesh</title>
+            <desc id="map-desc">A stylized futuristic map showing Rakkar and Tikri Musehra as active CyberScout nodes.</desc>
+            <defs>
+              <linearGradient id="routeGlow" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#4dc9b8" />
+                <stop offset="55%" stop-color="#f2a23a" />
+                <stop offset="100%" stop-color="#4dc9b8" />
+              </linearGradient>
+              <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path class="map-terrain terrain-back" d="M70 330C125 250 168 214 226 230C302 251 325 145 412 161C489 176 518 92 612 124C672 144 707 195 722 268" />
+            <path class="map-terrain terrain-front" d="M48 378C113 303 163 284 231 302C303 322 356 248 424 265C508 286 554 217 629 233C684 245 716 286 738 335" />
+            <path class="map-region" d="M104 272L151 207L228 180L286 126L373 147L424 91L519 108L601 76L682 139L706 220L653 302L591 363L483 347L410 403L316 377L227 398L158 346Z" />
+            <path class="signal-route" d="M244 214C315 163 432 152 526 246" />
+            <path class="signal-route route-secondary" d="M244 214C332 252 421 286 526 246" />
+            <g class="map-node rakkar-node" transform="translate(244 214)">
+              <circle class="node-pulse" r="34" />
+              <circle class="node-core" r="10" />
+              <text x="22" y="-18">Rakkar</text>
+              <text class="node-meta" x="22" y="2">2 trainers / 2 tablets</text>
+            </g>
+            <g class="map-node tikri-node" transform="translate(526 246)">
+              <circle class="node-pulse" r="34" />
+              <circle class="node-core" r="10" />
+              <text x="22" y="-18">Tikri Musehra</text>
+              <text class="node-meta" x="22" y="2">1 coordinator / 2 tablets</text>
+            </g>
+            <g class="map-anchor" transform="translate(173 164)">
+              <circle r="4" />
+              <text x="12" y="4">Dharamshala</text>
+            </g>
+            <g class="map-anchor" transform="translate(455 192)">
+              <circle r="4" />
+              <text x="12" y="4">Bir</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="node-cards">
+          <article>
+            <span class="card-index">Node 01</span>
+            <h3>Rakkar</h3>
+            <p>2 trainers and 2 tablets supporting self-practice, children’s activities, and 40-minute mindful AI literacy sessions.</p>
+          </article>
+          <article>
+            <span class="card-index">Node 02</span>
+            <h3>Tikri Musehra</h3>
+            <p>2 tablets deployed with 1 local coordinator, extending CyberScout toward the Bir-Jogindarnagar learning corridor.</p>
+          </article>
+          <article>
+            <span class="card-index">Network Pulse</span>
+            <h3>4 tablets active</h3>
+            <p>Two mountain nodes now form the first lightweight CyberScout mesh for local imagination, AI awareness, and digital sovereignty.</p>
+          </article>
+        </div>
       </section>
 
       <section class="gallery" id="gallery" aria-label="CyberScout field gallery">
@@ -470,6 +547,6 @@
       </section>
     </main>
 
-    <script src="script.js?v=17"></script>
+    <script src="script.js?v=22"></script>
   </body>
 </html>

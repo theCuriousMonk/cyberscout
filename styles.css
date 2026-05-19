@@ -29,10 +29,11 @@ html {
 
 #field-system,
 #rakkar-pilot,
+#node-map,
 #gallery,
 #curriculum,
 #roadmap {
-  scroll-margin-top: calc(var(--header-h) + 1rem);
+  scroll-margin-top: 0;
 }
 
 body {
@@ -504,6 +505,7 @@ p {
 }
 
 .intro-band,
+.node-map,
 .gallery,
 .pilot,
 .field-system,
@@ -529,6 +531,161 @@ p {
 .intro-band p:last-child {
   margin-bottom: 0;
   font-size: clamp(1rem, 1.5vw, 1.18rem);
+}
+
+.node-map {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.44fr) minmax(0, 0.86fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  border-bottom: 1px solid rgba(244, 235, 215, 0.12);
+  background:
+    radial-gradient(circle at 74% 34%, rgba(77, 201, 184, 0.14), transparent 28%),
+    linear-gradient(90deg, rgba(242, 162, 58, 0.08), transparent 38%),
+    rgba(244, 235, 215, 0.02);
+}
+
+.node-map-copy h2 {
+  margin-bottom: 1.2rem;
+  font-size: clamp(2rem, 4.2vw, 4rem);
+}
+
+.node-map-copy p:last-child {
+  margin-bottom: 0;
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+}
+
+.map-shell {
+  position: relative;
+  min-height: 430px;
+  border: 1px solid rgba(244, 235, 215, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(244, 235, 215, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 235, 215, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 35% 35%, rgba(77, 201, 184, 0.12), transparent 32%),
+    rgba(11, 14, 14, 0.82);
+  background-size: 38px 38px, 38px 38px, auto, auto;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.map-shell::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  content: "";
+  background: linear-gradient(0deg, rgba(9, 11, 13, 0.72), transparent);
+  pointer-events: none;
+}
+
+.signal-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+}
+
+.map-region {
+  fill: rgba(127, 155, 99, 0.08);
+  stroke: rgba(244, 235, 215, 0.25);
+  stroke-width: 1.5;
+}
+
+.map-terrain {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.terrain-back {
+  stroke: rgba(77, 201, 184, 0.12);
+}
+
+.terrain-front {
+  stroke: rgba(242, 162, 58, 0.14);
+}
+
+.signal-route {
+  fill: none;
+  stroke: url(#routeGlow);
+  stroke-linecap: round;
+  stroke-width: 3;
+  stroke-dasharray: 9 12;
+  filter: url(#softGlow);
+  animation: route-flow 4s linear infinite;
+}
+
+.route-secondary {
+  opacity: 0.45;
+  stroke-width: 1.6;
+  animation-duration: 6s;
+}
+
+.map-node .node-pulse {
+  fill: rgba(77, 201, 184, 0.08);
+  stroke: rgba(77, 201, 184, 0.6);
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: node-breathe 3.8s ease-in-out infinite;
+}
+
+.tikri-node .node-pulse {
+  stroke: rgba(242, 162, 58, 0.62);
+  animation-delay: 0.7s;
+}
+
+.map-node .node-core {
+  fill: var(--paper);
+  stroke: var(--teal);
+  stroke-width: 4;
+  filter: url(#softGlow);
+}
+
+.map-node text,
+.map-anchor text {
+  fill: var(--paper);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.map-node .node-meta {
+  fill: rgba(244, 235, 215, 0.66);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.map-anchor circle {
+  fill: rgba(242, 162, 58, 0.86);
+}
+
+.map-anchor text {
+  fill: rgba(244, 235, 215, 0.58);
+  font-size: 13px;
+}
+
+.node-cards {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+.node-cards article {
+  min-height: 220px;
+  padding: 1.25rem;
+  border: 1px solid rgba(244, 235, 215, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(244, 235, 215, 0.08), rgba(244, 235, 215, 0.025)),
+    rgba(12, 14, 13, 0.76);
+}
+
+.node-cards p {
+  margin-bottom: 0;
 }
 
 .gallery {
@@ -1116,6 +1273,24 @@ p {
   }
 }
 
+@keyframes route-flow {
+  to {
+    stroke-dashoffset: -42;
+  }
+}
+
+@keyframes node-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.72);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
 @keyframes logo-breathe {
   0%,
   100% {
@@ -1196,6 +1371,7 @@ p {
   }
 
   .intro-band,
+  .node-map,
   .section-heading,
   .gallery-heading,
   .pilot-grid,
@@ -1205,6 +1381,7 @@ p {
   }
 
   .system-grid,
+  .node-cards,
   .gallery-track,
   .sovereignty-grid,
   .trainer-protocol,
@@ -1216,6 +1393,11 @@ p {
 
   .gallery-track {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .map-shell,
+  .signal-map {
+    min-height: 390px;
   }
 
   .architecture {
@@ -1236,6 +1418,7 @@ p {
   }
 
   .site-header {
+    gap: 0.45rem;
     padding-inline: 0.85rem;
   }
 
@@ -1244,8 +1427,21 @@ p {
   }
 
   .site-nav {
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    padding-inline: 0.2rem;
     gap: 0.55rem;
     font-size: 0.72rem;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto;
   }
 
   .language-control {
@@ -1289,6 +1485,7 @@ p {
   }
 
   .intro-band,
+  .node-map,
   .gallery,
   .pilot,
   .field-system,
@@ -1312,8 +1509,27 @@ p {
   }
 
   .trainer-protocol article,
+  .node-cards article,
   .activity-board article {
     min-height: auto;
+  }
+
+  .node-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .map-shell,
+  .signal-map {
+    min-height: 340px;
+  }
+
+  .map-node text {
+    font-size: 15px;
+  }
+
+  .map-node .node-meta,
+  .map-anchor text {
+    font-size: 11px;
   }
 
   .gallery-track {
