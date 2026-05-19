@@ -29,6 +29,7 @@ html {
 
 #field-system,
 #rakkar-pilot,
+#gallery,
 #curriculum,
 #roadmap {
   scroll-margin-top: calc(var(--header-h) + 1rem);
@@ -109,7 +110,7 @@ a {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: clamp(0.85rem, 2vw, 1.7rem);
+  gap: clamp(0.7rem, 1.5vw, 1.35rem);
   color: rgba(244, 235, 215, 0.72);
   font-size: 0.9rem;
   font-weight: 700;
@@ -396,6 +397,7 @@ p {
 }
 
 .intro-band,
+.gallery,
 .pilot,
 .field-system,
 .sovereignty,
@@ -420,6 +422,128 @@ p {
 .intro-band p:last-child {
   margin-bottom: 0;
   font-size: clamp(1rem, 1.5vw, 1.18rem);
+}
+
+.gallery {
+  overflow: hidden;
+  padding-top: clamp(2.25rem, 4vw, 3.5rem);
+  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+  background:
+    linear-gradient(180deg, rgba(9, 11, 13, 0.2), rgba(77, 201, 184, 0.08) 52%, rgba(9, 11, 13, 0)),
+    rgba(244, 235, 215, 0.025);
+}
+
+.gallery-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.62fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: clamp(1.1rem, 2vw, 1.6rem);
+}
+
+.gallery-heading h2 {
+  max-width: 900px;
+  font-size: clamp(1.8rem, 3.4vw, 3.15rem);
+}
+
+.gallery-heading > p {
+  margin-bottom: 0;
+  font-size: clamp(1rem, 1.4vw, 1.16rem);
+}
+
+.pulse-thread {
+  position: relative;
+  height: 22px;
+  margin-bottom: clamp(0.8rem, 1.4vw, 1rem);
+}
+
+.pulse-thread::before {
+  position: absolute;
+  top: 50%;
+  right: -5rem;
+  left: -5rem;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, var(--teal), var(--saffron), var(--teal), transparent);
+  box-shadow: 0 0 32px rgba(77, 201, 184, 0.42);
+}
+
+.pulse-thread span {
+  position: absolute;
+  top: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(244, 235, 215, 0.55);
+  border-radius: 999px;
+  background: radial-gradient(circle, var(--paper), var(--teal) 34%, transparent 68%);
+  box-shadow: 0 0 30px rgba(77, 201, 184, 0.75);
+  animation: drift-pulse 5.5s ease-in-out infinite;
+}
+
+.pulse-thread span:nth-child(1) {
+  left: 12%;
+}
+
+.pulse-thread span:nth-child(2) {
+  left: 48%;
+  animation-delay: 0.9s;
+}
+
+.pulse-thread span:nth-child(3) {
+  left: 82%;
+  animation-delay: 1.8s;
+}
+
+.gallery-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+.gallery-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 390px;
+  border: 1px solid rgba(244, 235, 215, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(244, 235, 215, 0.08), rgba(244, 235, 215, 0.025)),
+    rgba(12, 14, 13, 0.82);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.gallery-card div {
+  padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.gallery-card span {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--saffron);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gallery-card h3 {
+  margin-bottom: 0.8rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 1.7vw, 1.65rem);
+  line-height: 1;
+}
+
+.gallery-card p {
+  margin-bottom: 0;
+  line-height: 1.6;
 }
 
 .pilot {
@@ -873,6 +997,18 @@ p {
   }
 }
 
+@keyframes drift-pulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(0.82);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.25);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 1020px) {
   .hero {
     min-height: 90svh;
@@ -888,6 +1024,7 @@ p {
 
   .intro-band,
   .section-heading,
+  .gallery-heading,
   .pilot-grid,
   .activity-heading,
   .curriculum-shell {
@@ -895,12 +1032,17 @@ p {
   }
 
   .system-grid,
+  .gallery-track,
   .sovereignty-grid,
   .trainer-protocol,
   .activity-board,
   .timeline,
   .module-list {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .architecture {
@@ -974,6 +1116,7 @@ p {
   }
 
   .intro-band,
+  .gallery,
   .pilot,
   .field-system,
   .sovereignty,
@@ -998,6 +1141,18 @@ p {
   .trainer-protocol article,
   .activity-board article {
     min-height: auto;
+  }
+
+  .gallery-track {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card {
+    min-height: auto;
+  }
+
+  .gallery-card img {
+    height: 250px;
   }
 }
 

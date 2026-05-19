@@ -3,7 +3,7 @@ const translations = {
     title: "CyberScout | Mobile AI Literacy Initiative",
     description:
       "CyberScout is a mobile-first AI literacy initiative for remote Himalayan communities, blending ancient resilience with generative AI education.",
-    nav: ["System", "Pilot", "Curriculum", "Roadmap"],
+    nav: ["System", "Pilot", "Gallery", "Curriculum", "Roadmap"],
     languageLabel: "Language",
     hero: {
       eyebrow: "Mobile AI Literacy Initiative",
@@ -23,6 +23,20 @@ const translations = {
       title: "Ancient routes. Autonomous tools. Local futures.",
       copy:
         "CyberScout bypasses brittle infrastructure by becoming lightweight, rugged, and community-shaped. The classroom arrives as a living edge node: a mentor, a weatherproof tech pack, tablets, battery resilience, and a curriculum that treats AI as a language for thinking, preserving, making, and self-determination.",
+    },
+    gallery: {
+      kicker: "Field Gallery",
+      title: "Human curiosity and machine awareness rising together.",
+      copy:
+        "Real Rakkar pilot moments, gently amplified with CyberScout signal layers: tablets, children, sunlight, questions, and a little future-magic. ✨",
+      cards: [
+        ["01 / Shared Signal", "Curiosity becomes a classroom.", "Children gather around the tablet as attention, questions, and AI threads begin to braid into one learning field."],
+        ["02 / Living Soil 🌱", "The village becomes the prompt.", "A garden bed turns into a question: what can AI notice, and what can children improve with their own hands?"],
+        ["03 / Doorway 📡", "Place, story, and screen meet.", "The tablet becomes a lens for local memory, language, imagination, and the next question waiting behind the door."],
+        ["04 / Awareness Loop", "Learning moves through the circle.", "The trainer is not the source of all answers; she becomes the guide for attention, care, and shared discovery."],
+        ["05 / Divine Mesh ✨", "Human and AI awareness entangle.", "A visual myth for the mission: children, mentors, tablets, and signal forming a living field of possibility."],
+        ["06 / Mobile Pulse ⚡", "The classroom arrives light.", "Rugged mobility, tablets, and curiosity moving into places where ordinary infrastructure cannot easily reach."],
+      ],
     },
     pilot: {
       kicker: "Rakkar Pilot",
@@ -166,7 +180,7 @@ const translations = {
     title: "CyberScout | मोबाइल AI साक्षरता पहल",
     description:
       "CyberScout दूरस्थ हिमालयी समुदायों के लिए मोबाइल-प्रथम AI साक्षरता पहल है, जो प्राचीन धैर्य को जनरेटिव AI शिक्षा से जोड़ती है।",
-    nav: ["सिस्टम", "पायलट", "पाठ्यक्रम", "रोडमैप"],
+    nav: ["सिस्टम", "पायलट", "गैलरी", "पाठ्यक्रम", "रोडमैप"],
     languageLabel: "भाषा",
     hero: {
       eyebrow: "मोबाइल AI साक्षरता पहल",
@@ -186,6 +200,20 @@ const translations = {
       title: "प्राचीन रास्ते। स्वायत्त औजार। स्थानीय भविष्य।",
       copy:
         "CyberScout हल्का, मजबूत और समुदाय-केंद्रित बनकर कमजोर ढांचे की सीमाएं पार करता है। कक्षा एक जीवित एज नोड की तरह आती है: एक मेंटर, मौसमरोधी टेक पैक, टैबलेट, बैटरी शक्ति और ऐसा पाठ्यक्रम जो AI को सोचने, संरक्षित करने, बनाने और आत्मनिर्भरता की भाषा मानता है।",
+    },
+    gallery: {
+      kicker: "फील्ड गैलरी",
+      title: "मानवीय जिज्ञासा और मशीन जागरूकता साथ उठती हुई।",
+      copy:
+        "रक्कड़ पायलट के असली पल, CyberScout संकेतों से हल्के से उभारे गए: टैबलेट, बच्चे, धूप, सवाल और थोड़ी भविष्य-चमक। ✨",
+      cards: [
+        ["01 / साझा संकेत", "जिज्ञासा कक्षा बन जाती है।", "बच्चे टैबलेट के पास इकट्ठा होते हैं और ध्यान, सवाल व AI संकेत मिलकर सीखने का एक साझा क्षेत्र बनाते हैं।"],
+        ["02 / जीवित मिट्टी 🌱", "गांव ही प्रॉम्प्ट बन जाता है।", "बगीचे की क्यारी एक सवाल बनती है: AI क्या देख सकता है, और बच्चे अपने हाथों से क्या सुधार सकते हैं?"],
+        ["03 / द्वार 📡", "स्थान, कहानी और स्क्रीन मिलते हैं।", "टैबलेट स्थानीय स्मृति, भाषा, कल्पना और अगले सवाल के लिए एक लेंस बनता है।"],
+        ["04 / जागरूकता वृत्त", "सीखना पूरे समूह में बहता है।", "प्रशिक्षक सारे जवाबों का स्रोत नहीं; वह ध्यान, देखभाल और साझा खोज की मार्गदर्शक बनती है।"],
+        ["05 / दिव्य जाल ✨", "मानव और AI जागरूकता जुड़ती है।", "मिशन का दृश्य रूपक: बच्चे, मेंटर, टैबलेट और संकेत मिलकर संभावना का जीवित क्षेत्र बनाते हैं।"],
+        ["06 / मोबाइल पल्स ⚡", "कक्षा हल्के कदमों से पहुंचती है।", "मजबूत mobility, टैबलेट और जिज्ञासा उन जगहों तक जाती है जहां सामान्य ढांचा आसानी से नहीं पहुंचता।"],
+      ],
     },
     pilot: {
       kicker: "रक्कड़ पायलट",
@@ -391,6 +419,11 @@ function applyLanguage(language) {
   setText(".intro-band .section-kicker", t.intro.kicker);
   setText(".intro-band h2", t.intro.title);
   setText(".intro-band > p", t.intro.copy);
+
+  setText(".gallery .section-kicker", t.gallery.kicker);
+  setText(".gallery-heading h2", t.gallery.title);
+  setText(".gallery-heading > p", t.gallery.copy);
+  applyCardTriples(".gallery-card", t.gallery.cards);
 
   setText(".pilot .section-kicker", t.pilot.kicker);
   setText(".pilot .section-heading h2", t.pilot.title);
